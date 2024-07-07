@@ -8,8 +8,8 @@
     --separator: hsla(0, 0%, 87%, 1);
     --content-right-bg: hsla(220, 33%, 98%, 1);
     --progressbar-bg: hsla(220, 32%, 94%, 1);
-    --progress: hsla(164, 58%, 46%, 1);
     --tips-box-bg: hsla(220, 34%, 95%, 1);
+    --bar-bg: hsla(214, 100%, 54%, 1);
 }
 
 @font-face {
@@ -85,6 +85,7 @@ main {
     background-color: var(--sidebar-bg);
     min-height: 100vh;
     display: flex;
+    padding: 2rem;
 }
 
 /******************
@@ -92,7 +93,7 @@ main {
 ******************/
 
 .sidebar {
-    padding-block-start: 6.3rem;
+    padding-block-start: 6.1rem;
     flex-basis: 25%;
     padding-inline-start: 6.4rem;
 }
@@ -172,6 +173,11 @@ main {
     opacity: 1;
 }
 
+.main-nav-link:focus-visible {
+    outline: 2px dashed white;
+    outline-offset: 2px;
+}
+
 .main-nav-list li:not(:last-child) {
     margin-block-end: 3rem;
 }
@@ -179,6 +185,8 @@ main {
 .content {
     flex-grow: 1;
     display: inherit;
+    border-radius: 30px;
+    overflow: hidden;
 }
 
 /******************
@@ -217,12 +225,18 @@ main {
     margin-inline-end: 1rem;
     cursor: pointer;
     color: var(--separator);
+    border-radius: 50%;
 
     transition: color 0.2s ease-in;
 }
 
 .users button:hover {
     color: var(--text-primary);
+}
+
+.users button:focus-visible {
+    outline: 3px dashed var(--accent);
+    outline-offset: 2px;
 }
 
 .title h1 {
@@ -246,6 +260,19 @@ main {
 
 .stats {
     margin-block-start: 4.6rem;
+    height: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.bar {
+    background-color: var(--bar-bg);
+    width: 1.6rem;
+}
+
+.bar:not(:last-child) {
+    margin-right: 6px;
 }
 
 /******************
@@ -277,9 +304,13 @@ main {
 
 .date button {
     border: none;
-    /* outline: none; */
     background: none;
     cursor: pointer;
+}
+
+.date button:focus-visible {
+    outline: 3px dashed var(--text-secondary);
+    outline-offset: 2px;
 }
 
 .lists__items {
@@ -333,7 +364,6 @@ main {
     padding-block-end: 6rem;
     padding-inline: 5rem;
     flex-basis: 33%;
-    /* flex-grow: 1; */
 }
 
 .content__right h2 {
@@ -383,7 +413,7 @@ main {
     top: 0;
     left: 0;
     height: 100%;
-    background-color: var(--progress);
+    background-color: var(--accent);
     z-index: 10;
 }
 
@@ -425,6 +455,19 @@ main {
     width: 100%;
     border-radius: 8px;
     margin-block-start: 2rem;
+    cursor: pointer;
+
+    transition: all 0.2s ease-in;
+}
+
+.box-tips button:hover {
+    color: var(--text-primary);
+    background-color: var(--accent);
+}
+
+.box-tips button:focus-visible {
+    outline: 3px dashed var(--text-secondary);
+    outline-offset: 3px;
 }
 
 #file {
