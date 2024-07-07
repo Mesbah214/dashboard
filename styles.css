@@ -197,6 +197,34 @@ main {
     justify-content: space-between;
 }
 
+.users {
+    display: flex;
+    direction: rtl;
+    align-items: center;
+}
+
+.avatar {
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--primary);
+    margin-left: -10px;
+}
+
+.users button {
+    border: none;
+    outline: none;
+    background: none;
+    margin-inline-end: 1rem;
+    cursor: pointer;
+    color: var(--separator);
+
+    transition: color 0.2s ease-in;
+}
+
+.users button:hover {
+    color: var(--text-primary);
+}
+
 .title h1 {
     color: var(--text-primary);
     font-size: 4rem;
