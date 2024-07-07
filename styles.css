@@ -268,7 +268,12 @@ main {
 
 .bar {
     background-color: var(--bar-bg);
+    opacity: 0.2;
     width: 1.6rem;
+}
+
+.bar.active {
+    opacity: 1;
 }
 
 .bar:not(:last-child) {
