@@ -6,6 +6,10 @@
     --sidebar-bg: hsla(0, 0%, 6%, 1);
     --notification-bg: hsla(0, 71%, 53%, 1);
     --separator: hsla(0, 0%, 87%, 1);
+    --content-right-bg: hsla(220, 33%, 98%, 1);
+    --progressbar-bg: hsla(220, 32%, 94%, 1);
+    --progress: hsla(164, 58%, 46%, 1);
+    --tips-box-bg: hsla(220, 34%, 95%, 1);
 }
 
 @font-face {
@@ -13,6 +17,7 @@
     font-weight: 400;
     src: url("./fonts/Avenir-Medium.woff2") format("woff2"), url("./fonts/Avenir-Medium.woff") format("woff");
 }
+
 /******************
 * Resets
 ******************/
@@ -88,13 +93,8 @@ main {
 
 .sidebar {
     padding-block-start: 6.3rem;
-    flex-basis: 27%;
+    flex-basis: 25%;
     padding-inline-start: 6.4rem;
-    /* display: inherit;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start; */
-    background-color: orange;
 }
 
 .profile__picture {
@@ -176,17 +176,17 @@ main {
     margin-block-end: 3rem;
 }
 
-/******************
-* Content main
-******************/
-
 .content {
     flex-grow: 1;
     display: inherit;
 }
 
+/******************
+* Content main
+******************/
+
 .content__main {
-    flex-basis: 60%;
+    flex-grow: 1;
     background-color: var(--primary);
     padding-block: 6rem;
     padding-inline: 10rem;
@@ -194,7 +194,6 @@ main {
 
 .content__heading {
     display: flex;
-    flex-grow: 1;
     justify-content: space-between;
 }
 
@@ -294,4 +293,120 @@ main {
     text-align: right;
     font-weight: 600;
     letter-spacing: 0.343px;
+}
+
+/******************
+* Content right
+******************/
+
+.content__right {
+    background-color: var(--content-right-bg);
+    padding-block-start: 7.6rem;
+    padding-block-end: 6rem;
+    padding-inline: 5rem;
+    flex-basis: 33%;
+    /* flex-grow: 1; */
+}
+
+.content__right h2 {
+    font-family: Avenir;
+    font-size: 2rem;
+    line-height: 1.5; /* 150% */
+    letter-spacing: 0.333px;
+}
+
+.category {
+    margin-block-start: 3rem;
+}
+
+.category div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.category h4 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.84; /* 184.615% */
+    letter-spacing: 0.464px;
+}
+
+.category p {
+    color: #273240;
+    text-align: right;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.84; /* 184.615% */
+    letter-spacing: 0.464px;
+}
+
+.progress__wrap {
+    position: relative;
+    width: 100%;
+    height: 0.5rem;
+    background-color: var(--progressbar-bg);
+    margin-block-start: 0.8rem;
+    overflow: hidden;
+}
+
+.progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: var(--progress);
+    z-index: 10;
+}
+
+.box-tips {
+    margin-block-start: 10rem;
+    background-color: var(--tips-box-bg);
+    padding-inline: 2.5rem;
+    padding-block-start: 10.5rem;
+    padding-block-end: 2.5rem;
+    border-radius: 15px;
+    position: relative;
+}
+
+.box-tips h3 {
+    font-weight: 600;
+    letter-spacing: 0.343px;
+}
+
+.box-tips p {
+    margin-block-start: 0.4rem;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    line-height: 1.75; /* 175% */
+    letter-spacing: 0.429px;
+    opacity: 0.7;
+}
+
+.box-tips button {
+    border: none;
+    outline: none;
+    color: var(--primary);
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    background-color: var(--sidebar-bg);
+    text-transform: uppercase;
+    padding-block-start: 1.3rem;
+    padding-block-end: 1.2rem;
+    width: 100%;
+    border-radius: 8px;
+    margin-block-start: 2rem;
+}
+
+#file {
+    position: absolute;
+    top: -17px;
+    left: 25px;
+}
+
+#plant {
+    position: absolute;
+    top: -33px;
+    right: 25px;
 }
